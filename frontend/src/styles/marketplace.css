@@ -1,0 +1,157 @@
+/* Marketplace */
+
+.marketplace-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.marketplace-heading h2 {
+  margin-bottom: 6px;
+}
+
+.marketplace-heading p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.category-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-bottom: 24px;
+  padding-bottom: 4px;
+}
+
+.category {
+  border: 1px solid #ddd7e9;
+  background: white;
+  border-radius: 999px;
+  padding: 10px 17px;
+  color: #626874;
+  white-space: nowrap;
+}
+
+.category.active {
+  color: white;
+  background: var(--purple);
+  border-color: var(--purple);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  transition: transform .18s, box-shadow .18s;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(30,20,60,.08);
+}
+
+.product-image-wrap {
+  padding: 12px;
+}
+
+.product-image-wrap img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 17px;
+  display: block;
+}
+
+.product-card-body {
+  padding: 0 18px 20px;
+}
+
+.product-category {
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 7px 0;
+  padding-right: 20px;
+}
+
+.product-card strong {
+  font-size: 17px;
+}
+
+.emi-line {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 9px;
+}
+
+.emi-line b {
+  color: #222738;
+}
+
+.no-cost {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--purple-soft);
+  color: var(--purple-dark);
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.product-arrow {
+  position: absolute;
+  right: 16px;
+  bottom: 22px;
+  color: var(--purple);
+}
+
+/* Marketplace responsive */
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .product-card {
+    border-radius: 20px;
+  }
+
+  .product-card-body {
+    padding: 0 13px 16px;
+  }
+
+  .product-card h3 {
+    font-size: 15px;
+  }
+
+  .product-category {
+    font-size: 10px;
+  }
+
+  .emi-line {
+    font-size: 11px;
+  }
+}

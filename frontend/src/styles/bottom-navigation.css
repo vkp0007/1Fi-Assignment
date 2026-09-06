@@ -1,0 +1,125 @@
+/* =========================================
+   Floating Bottom Navigation
+   ========================================= */
+
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+
+  width: min(680px, calc(100% - 32px));
+  height: 70px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  background: #ffffff;
+
+  border: 1px solid #ebe8f2;
+  border-radius: 22px;
+
+  box-shadow:
+    0 8px 30px rgba(35, 25, 60, 0.10),
+    0 2px 8px rgba(35, 25, 60, 0.05);
+
+  z-index: 100;
+}
+
+.bottom-nav-item {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  min-width: 0;
+
+  color: #85828f;
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.bottom-nav-icon {
+  flex-shrink: 0;
+  color: currentColor;
+  transition: color 0.2s ease;
+}
+
+/* Selected item */
+.bottom-nav-item.active {
+  color: #7028e7;
+  font-weight: 600;
+}
+
+/* Purple strip above selected icon */
+.bottom-nav-item.active::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 34px;
+  height: 3px;
+
+  transform: translateX(-50%);
+
+  background: #7028e7;
+
+  border-radius: 0 0 5px 5px;
+}
+
+/* Selected icon */
+.bottom-nav-item.active .bottom-nav-icon {
+  color: #7028e7;
+}
+
+/* Desktop hover */
+@media (hover: hover) and (pointer: fine) {
+  .bottom-nav-item:hover {
+    color: #7028e7;
+  }
+}
+
+/*  Mobile*/
+
+@media (max-width: 620px) {
+  .bottom-nav {
+    bottom: 12px;
+
+    width: calc(100% - 24px);
+    height: 68px;
+
+    border-radius: 20px;
+  }
+
+  .bottom-nav-item {
+    font-size: 9px;
+    gap: 3px;
+  }
+
+  .bottom-nav-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bottom-nav-item.active::before {
+    width: 30px;
+  }
+}
+
+
+.bottom-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #9aa0aa; font-size: 11px; padding: 6px 2px; }
+.bottom-item.active { color: var(--purple); font-weight: 700; }
+.bottom-item svg { stroke-width: 1.7; }
